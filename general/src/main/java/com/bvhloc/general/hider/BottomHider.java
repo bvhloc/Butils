@@ -2,6 +2,7 @@ package com.bvhloc.general.hider;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -16,6 +17,10 @@ public class BottomHider extends View {
         int colors[] = {0x00000000, getSolidColor()};
         GradientDrawable drawable = new GradientDrawable(
                 GradientDrawable.Orientation.TOP_BOTTOM, colors);
-        setBackground(drawable);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            setBackground(drawable);
+        } else {
+            setBackgroundDrawable(drawable);
+        }
     }
 }

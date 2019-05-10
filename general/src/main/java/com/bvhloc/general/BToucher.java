@@ -6,9 +6,7 @@ import android.view.View;
 
 public class BToucher {
 
-    private static float TOUCH_ALPHA = (float) 0.5;
-
-    private static Rect rect;
+    private static float TOUCH_ALPHA = 0.5f;
 
     public static void addAlpha(final View view) {
         setTouch(view, new TouchCallback() {
@@ -26,7 +24,7 @@ public class BToucher {
 
     /**
      * This function work only on Android 5.0 and above;
-     * */
+     */
     public static void addElevation(final View view) {
 
         final float elevation = view.getElevation();
@@ -46,6 +44,8 @@ public class BToucher {
             }
         });
     }
+
+    private static Rect rect;
 
     private static void setTouch(View view, final TouchCallback callback) {
         view.setOnTouchListener(new View.OnTouchListener() {

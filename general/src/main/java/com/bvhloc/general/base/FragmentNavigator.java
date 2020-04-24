@@ -30,9 +30,12 @@ public class FragmentNavigator {
         mFragmentManager = fragmentManager;
         mDefaultContainer = defaultContainer;
         mFragmentManager
-                .addOnBackStackChangedListener(() -> {
-                    if (onStackChanged != null) {
-                        onStackChanged.onChanged(getActiveFragment());
+                .addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+                    @Override
+                    public void onBackStackChanged() {
+                        if (onStackChanged != null) {
+                            onStackChanged.onChanged(getActiveFragment());
+                        }
                     }
                 });
     }

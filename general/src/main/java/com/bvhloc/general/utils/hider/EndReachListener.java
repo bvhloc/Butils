@@ -1,4 +1,4 @@
-package com.bvhloc.general.hider;
+package com.bvhloc.general.utils.hider;
 
 public interface EndReachListener {
 

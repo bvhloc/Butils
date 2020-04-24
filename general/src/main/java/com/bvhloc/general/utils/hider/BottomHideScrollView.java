@@ -1,4 +1,4 @@
-package com.bvhloc.general.hider;
+package com.bvhloc.general.utils.hider;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

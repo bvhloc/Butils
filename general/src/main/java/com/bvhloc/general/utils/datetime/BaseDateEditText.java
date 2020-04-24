@@ -1,4 +1,4 @@
-package com.bvhloc.general.datetime;
+package com.bvhloc.general.utils.datetime;
 
 import android.content.Context;
 import android.content.DialogInterface;

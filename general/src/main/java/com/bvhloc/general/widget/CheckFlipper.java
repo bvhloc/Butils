@@ -9,19 +9,30 @@ public class CheckFlipper extends ViewFlipper {
 
     public CheckFlipper(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setDisplayedChild(isChecked() ? 0 : 1);
-                if (onCheckedChangeListener != null) {
-                    onCheckedChangeListener.onCheckedChanged(CheckFlipper.this, isChecked());
+
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        final int childCount = getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            final int finalI = i;
+            getChildAt(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int nextDisplay = finalI == childCount - 1 ? 0 : finalI + 1;
+                    setDisplayedChild(nextDisplay);
+                    if (onCheckedChangeListener != null) {
+                        onCheckedChangeListener.onCheckedChanged(CheckFlipper.this, isChecked(), nextDisplay);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
     public boolean isChecked() {
-        return getDisplayedChild() == 1;
+        return getDisplayedChild() != 0;
     }
 
     public void setChecked(boolean isChecked) {
@@ -32,7 +43,7 @@ public class CheckFlipper extends ViewFlipper {
 
     public interface OnCheckedChangeListener {
 
-        void onCheckedChanged(View view, boolean isChecked);
+        void onCheckedChanged(View view, boolean isChecked, int displayedIndex);
     }
 
     public void setOnCheckedChangeListener(OnCheckedChangeListener onCheckedChangeListener) {

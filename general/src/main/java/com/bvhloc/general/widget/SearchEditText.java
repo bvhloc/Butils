@@ -10,7 +10,7 @@ public class SearchEditText {
     /**
      * Find this function in Youtrade project
      * */
-    public static void setupClearablEditText(final EditText editText, final View btnClear, final OnClearCallback callback) {
+    public static void setupClearableEditText(final EditText editText, final View btnClear, final OnClearCallback callback) {
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

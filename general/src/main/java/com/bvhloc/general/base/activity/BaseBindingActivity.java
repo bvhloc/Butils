@@ -1,7 +1,7 @@
 package com.bvhloc.general.base.activity;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 
 public abstract class BaseBindingActivity extends BaseActivity {
 

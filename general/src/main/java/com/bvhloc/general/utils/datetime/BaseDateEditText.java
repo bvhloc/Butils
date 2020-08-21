@@ -2,11 +2,12 @@ package com.bvhloc.general.utils.datetime;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.DatePicker;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.AppCompatEditText;
 
 import com.bvhloc.general.BToucher;
 import com.bvhloc.general.R;

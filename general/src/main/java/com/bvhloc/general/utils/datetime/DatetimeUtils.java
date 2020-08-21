@@ -2,10 +2,11 @@ package com.bvhloc.general.utils.datetime;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AlertDialog;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

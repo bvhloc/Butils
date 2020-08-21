@@ -16,5 +16,5 @@ Step 1. Add the JitPack repository to your build file, Add it in your root build
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.bvhloc:Butils:0.4.3'
+	        implementation 'com.github.bvhloc:Butils:0.5'
 	}
